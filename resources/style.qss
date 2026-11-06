@@ -1,0 +1,93 @@
+/* ---------- Fond général ---------- */
+QMainWindow, QDialog            { background: #1b1d21; color: #d6d9de; }
+QWidget                         { font-size: 10pt; color: #d6d9de; }
+QMenuBar                        { background: #202226; border-bottom: 1px solid #33373d; }
+QMenuBar::item                  { background: transparent; padding: 4px 10px; }
+QMenuBar::item:selected         { background: #2b2f35; }
+QMenu                           { background: #24272c; border: 1px solid #33373d; padding: 4px; }
+QMenu::item                     { padding: 6px 20px; border-radius: 4px; }
+QMenu::item:selected            { background: #2f6fdb; color: #ffffff; }
+QStatusBar                      { background: #202226; border-top: 1px solid #33373d; color: #9aa1ab; }
+QToolTip                        { background: #2b2f35; color: #d6d9de; border: 1px solid #3a3f46; }
+
+/* ---------- Barre latérale ---------- */
+#sidebar                        { background: #202226; border: 0; border-right: 1px solid #33373d; }
+#sidebar QPushButton            { border: 0; border-radius: 6px; padding: 8px 10px;
+                                  text-align: left; color: #c3c8cf; background: transparent; }
+#sidebar QPushButton:hover      { background: #2b2f35; color: #e6e8eb; }
+#sidebar QPushButton:checked    { background: #24324d; color: #8fb4ff; font-weight: 600; }
+#sidebarSection                 { color: #7d848e; font-size: 8pt; font-weight: 600;
+                                  padding: 12px 10px 4px; background: transparent; }
+
+/* ---------- Titres et textes secondaires ---------- */
+#pageTitle                      { font-size: 15pt; font-weight: 600; color: #eceef1; }
+#sectionTitle                   { font-size: 11pt; font-weight: 600; color: #eceef1; }
+#muted                          { color: #9aa1ab; }
+
+/* ---------- Cartes et panneaux ---------- */
+#card, #panel                   { background: #24272c; border: 1px solid #33373d; border-radius: 8px; }
+#cardTitle                      { color: #9aa1ab; font-weight: 600; background: transparent; }
+#cardValue                      { font-size: 17pt; font-weight: 600; color: #eceef1; background: transparent; }
+
+/* ---------- Bandeau d'état (propriété dynamique "level") ---------- */
+#banner                         { border-radius: 8px; padding: 10px 14px;
+                                  background: #24272c; border: 1px solid #33373d; }
+#banner[level="ok"]             { background: #1d2b23; border: 1px solid #2f5a40; }
+#banner[level="warning"]        { background: #2d2619; border: 1px solid #6a4f22; }
+#banner[level="error"]          { background: #2e1d1d; border: 1px solid #6b2e2e; }
+#bannerTitle                    { font-size: 11pt; font-weight: 600; color: #eceef1; background: transparent; }
+#bannerDetail                   { color: #c3c8cf; background: transparent; }
+
+/* ---------- Badge de code d'erreur ---------- */
+#codeBadge                      { font-family: Consolas; font-size: 9pt; background: #2f333a;
+                                  color: #d6d9de; border-radius: 4px; padding: 1px 6px; }
+
+/* ---------- Boutons ---------- */
+QPushButton                     { background: #2b2f35; border: 1px solid #3a3f46; border-radius: 6px;
+                                  padding: 6px 14px; color: #d6d9de; }
+QPushButton:hover               { background: #33373e; }
+QPushButton:pressed             { background: #3a3f47; }
+QPushButton:disabled            { color: #6b717a; background: #24272c; border-color: #30343a; }
+QPushButton[role="primary"]     { background: #2f6fdb; color: #ffffff; border: 0; font-weight: 600; }
+QPushButton[role="primary"]:hover { background: #3b7bea; }
+QPushButton[role="danger"]      { color: #ff8a80; border-color: #a33a3a; font-weight: 600; }
+
+/* ---------- Champs de saisie ---------- */
+QLineEdit, QComboBox, QSpinBox  { background: #1f2125; border: 1px solid #3a3f46; border-radius: 6px;
+                                  padding: 5px 8px; color: #d6d9de; }
+QLineEdit:focus, QComboBox:focus { border-color: #2f6fdb; }
+
+/* ---------- Jauges (propriété dynamique "level") ---------- */
+QProgressBar                    { border: 0; background: #33373d; border-radius: 3px;
+                                  max-height: 6px; text-align: center; }
+QProgressBar::chunk             { background: #7d848e; border-radius: 3px; }
+QProgressBar[level="ok"]::chunk      { background: #3fb26b; }
+QProgressBar[level="warning"]::chunk { background: #e09b3d; }
+QProgressBar[level="error"]::chunk   { background: #e5534b; }
+
+/* ---------- Tableaux et listes ---------- */
+QTableView, QTreeView, QListView { background: #24272c; border: 0; gridline-color: #30343a;
+                                   selection-background-color: #24324d; selection-color: #eceef1;
+                                   alternate-background-color: #272a30; }
+QHeaderView::section            { background: #24272c; color: #9aa1ab; font-weight: 600;
+                                  border: 0; border-bottom: 1px solid #33373d; padding: 6px 8px; }
+
+/* ---------- Journaux et console ---------- */
+#logView                        { background: #1a1c1f; border: 1px solid #33373d; border-radius: 6px;
+                                  font-family: Consolas; font-size: 9pt; color: #c3c8cf; }
+#console                        { background: #111315; color: #c9ced4; border: 1px solid #2a2d32;
+                                  border-radius: 6px; font-family: Consolas; font-size: 9pt; }
+
+/* ---------- Onglets ---------- */
+QTabWidget::pane                { border: 1px solid #33373d; border-radius: 8px; background: #24272c; }
+QTabBar::tab                    { padding: 6px 14px; color: #9aa1ab; background: transparent; }
+QTabBar::tab:selected           { color: #8fb4ff; font-weight: 600; border-bottom: 2px solid #2f6fdb; }
+
+/* ---------- Barres de défilement ---------- */
+QScrollBar:vertical             { background: transparent; width: 10px; margin: 0; }
+QScrollBar::handle:vertical     { background: #3a3f46; border-radius: 5px; min-height: 30px; }
+QScrollBar::handle:vertical:hover { background: #4a5059; }
+QScrollBar:horizontal           { background: transparent; height: 10px; margin: 0; }
+QScrollBar::handle:horizontal   { background: #3a3f46; border-radius: 5px; min-width: 30px; }
+QScrollBar::add-line, QScrollBar::sub-line,
+QScrollBar::add-page, QScrollBar::sub-page { background: none; border: none; width: 0; height: 0; }

@@ -15,11 +15,11 @@ add_executable(P4BackupMonitor WIN32
     src/core/health.h         src/core/health.cpp
     src/ui/mainwindow.h       src/ui/mainwindow.cpp       src/ui/mainwindow.ui
     src/ui/overviewpage.h     src/ui/overviewpage.cpp     src/ui/overviewpage.ui
+    resources/resources.qrc
 )
 
+# Racine des #include : on écrit "core/collector.h", "ui/mainwindow.h"
 target_include_directories(P4BackupMonitor PRIVATE ${CMAKE_SOURCE_DIR}/src)
-# Permet d'écrire #include "Collector.h" depuis n'importe quel fichier
-target_include_directories(P4BackupMonitor PRIVATE ${CMAKE_SOURCE_DIR} ${CMAKE_SOURCE_DIR}/src)
 target_link_libraries(P4BackupMonitor PRIVATE Qt6::Widgets)
 target_compile_definitions(P4BackupMonitor PRIVATE APP_VERSION="${PROJECT_VERSION}")
 
