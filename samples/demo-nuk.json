@@ -1,0 +1,100 @@
+{
+ "collectedAt": "2026-11-06T08:30:12",
+ "server": "P4SRV01",
+ "collector": "Get-BackupStatus.ps1 1.0",
+ "cimProtocol": "Wsman",
+ "config": {
+  "path": "\\\\P4SRV01\\C$\\PerforceBackup\\config.psd1",
+  "serverLabel": "Perforce P4SRV01",
+  "nasRoot": "\\\\NAS01\\Backup\\Perforce",
+  "backupAccount": "CONTOSO\\backup",
+  "testAccount": "CONTOSO\\backup",
+  "p4Root": "C:\\p4d",
+  "maxAgeHours": 26,
+  "logDir": "C:\\PerforceBackup\\logs"
+ },
+ "tasks": [
+  {
+   "name": "Sauvegarde Perforce",
+   "state": "Ready",
+   "account": "CONTOSO\\backup",
+   "lastRun": "2026-11-05T21:00:00",
+   "lastResult": 0,
+   "nextRun": "2026-11-06T21:00:00",
+   "triggers": ["2026-11-05T21:00:00"]
+  },
+  {
+   "name": "Test quotidien de restauration",
+   "state": "Ready",
+   "account": "CONTOSO\\backup",
+   "lastRun": "2026-11-05T22:00:00",
+   "lastResult": 0,
+   "nextRun": "2026-11-06T22:00:00",
+   "triggers": []
+  },
+  {
+   "name": "Test complet de restauration",
+   "state": "Ready",
+   "account": "CONTOSO\\backup",
+   "lastRun": "2026-11-01T22:30:00",
+   "lastResult": 0,
+   "nextRun": "2026-11-08T22:30:00",
+   "triggers": []
+  }
+ ],
+ "disks": [
+  {
+   "name": "C:",
+   "label": "Windows",
+   "totalBytes": 1000204886016,
+   "freeBytes": 612000000000
+  }
+ ],
+ "nas": {
+  "path": "\\\\NAS01\\Backup\\Perforce",
+  "totalBytes": 15998753177600,
+  "freeBytes": 5120000000000,
+  "reachable": true
+ },
+ "lastBackup": {
+  "date": "2026-11-05T21:12:40",
+  "ageHours": 11.3,
+  "checkpointNumber": 312,
+  "checkpointFile": "checkpoint.312.gz",
+  "changeCounter": 48217,
+  "depotCount": 8,
+  "durationSeconds": 760
+ },
+ "logs": [
+  {
+   "file": "test-quotidien_20261105_220000.log",
+   "path": "\\\\P4SRV01\\C$\\PerforceBackup\\logs\\test-quotidien_20261105_220000.log",
+   "kind": "test-quotidien",
+   "started": "2026-11-05T22:00:00",
+   "modified": "2026-11-05T22:06:12",
+   "status": "ok",
+   "summary": "La base sauvegardée cette nuit est restaurable : checkpoint n°312, dernière changelist 48217.",
+   "issues": [],
+   "text": "2026-11-05 22:00:00 [INFO] Journal : C:\\PerforceBackup\\logs\\test-quotidien_20261105_220000.log\n2026-11-05 22:00:01 [INFO] Étape : Lecture du statut\n2026-11-05 22:06:12 [INFO] === La base sauvegardée cette nuit est restaurable : checkpoint n°312, dernière changelist 48217. ==="
+  },
+  {
+   "file": "sauvegarde_20261105_210000.log",
+   "path": "\\\\P4SRV01\\C$\\PerforceBackup\\logs\\sauvegarde_20261105_210000.log",
+   "kind": "sauvegarde",
+   "started": "2026-11-05T21:00:00",
+   "modified": "2026-11-05T21:12:40",
+   "status": "warning",
+   "summary": "Sauvegarde complète : checkpoint n°312, dernière changelist 48217, 8 dépôt(s) copiés sur le NAS.",
+   "issues": [
+    {
+     "time": "2026-11-05 21:00:02",
+     "level": "WARN",
+     "code": "SAV-04",
+     "text": "Ticket Perforce de svc_backup absent ou expiré : reconnexion automatique effectuée [SAV-04]"
+    }
+   ],
+   "text": "2026-11-05 21:00:00 [INFO] Journal : C:\\PerforceBackup\\logs\\sauvegarde_20261105_210000.log\n2026-11-05 21:00:00 [INFO] Machine : P4SRV01, compte Windows : CONTOSO\\backup\n2026-11-05 21:00:01 [INFO] Étape : Accès au NAS\n2026-11-05 21:00:02 [WARN] Ticket Perforce de svc_backup absent ou expiré : reconnexion automatique effectuée [SAV-04]\n2026-11-05 21:00:03 [INFO] Étape : Checkpoint\n2026-11-05 21:04:41 [INFO]     OK : checkpoint.312.gz (1,2 Go)\n2026-11-05 21:04:41 [INFO] Étape : Copie des dépôts\n2026-11-05 21:11:58 [INFO]     OK : 8 dépôt(s)\n2026-11-05 21:12:40 [INFO] === Sauvegarde complète : checkpoint n°312, dernière changelist 48217, 8 dépôt(s) copiés sur le NAS. ==="
+  }
+ ],
+ "problems": []
+}
